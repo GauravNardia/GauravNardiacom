@@ -50,24 +50,24 @@ export function Home() {
 				{/* Bio Content */}
 				<div className='font-normal min-w-full relative shrink-0 text-olive-800 dark:text-olive-100 text-sm/6 text-justify flex flex-col gap-4'>
 					<p className='relative animate-in animate-delay-1'>
-						<span>I'm a product designer and founder building </span>
+						<span>I'm a full stack engineer who loves building things from zero to one. I've built systems like </span>
 						<a
-							href='https://peerlist.io'
+							href='https://better-vercel.com'
 							target='_blank'
 							rel='noopener noreferrer'
 							className='link'>
-							Peerlist
+							Better Vercel
 						</a>
 						<span> and </span>
 						<a
-							href='https://autosend.com'
+							href='https://puffinanalytics.com'
 							target='_blank'
 							rel='noopener noreferrer'
 							className='link'>
-							AutoSend
+							Puffin Analytics
 						</a>
 						<span>
-							. Over the past 15 years, I've focused on designing beautiful software that people
+							{" "}and many more . Over the past 3 years, I've focused on building software that people
 							love to use.
 						</span>
 					</p>
@@ -78,29 +78,21 @@ export function Home() {
 						</a>
 						<span>
 							{" "}
-							about my design philosophy, approach to building products, and hard-won lessons from
-							my journey as a founder. These essays are my way of thinking through challenges and
+							about my softwares, architectures, approach to building products, and hard-won lessons from
+							my journey. These essays are my way of thinking through challenges and
 							sharing what I've learned along the way.
 						</span>
 					</p>
 					<p className='animate-in animate-delay-3'>
-						<span>When I'm not designing, I love shooting street </span>
-						<a
-							href='https://retrolens.me'
-							target='_blank'
-							rel='noopener noreferrer'
-							className='link'>
-							photography
-						</a>
+						<span>When I'm not building,</span>
 						<span>
 							{" "}
-							on film with my Leica M6. There's something special about slowing down and capturing
-							everyday moments on analog.
+							I read books, learn about systems, think about the problem that we can solve. 
 						</span>
 					</p>
 					<p className='animate-in animate-delay-4'>
 						<span>
-							Always open to interesting conversations about design, startups, and photography.{" "}
+							If you're building something ambitious, I'd love to hear about it.{" "}
 						</span>
 						<span
 							className='relative inline-block'
@@ -139,11 +131,11 @@ export function Home() {
 						</a>
 						<span>, or </span>
 						<a
-							href='https://instagram.com/retrolens.me'
+							href='https://www.linkedin.com/in/gauravnardia'
 							target='_blank'
 							rel='noopener noreferrer'
 							className='link'>
-							Instagram
+							LinkedIn
 						</a>
 						<span>.</span>
 					</p>

@@ -7,21 +7,33 @@ export interface Project {
 
 export const projects: Project[] = [
 	{
-		id: "autosend",
-		name: "AutoSend",
-		description: "Email infra for teams building with AI agents",
-		url: "https://autosend.com",
+		id: "bettervercel",
+		name: "Better Vercel",
+		description: "Self-hosted vercel alternative",
+		url: "https://better-vercel.com",
 	},
 	{
-		id: "peerlist",
-		name: "Peerlist",
-		description: "Professional network for builders",
-		url: "https://peerlist.io",
+		id: "puffinanalytics",
+		name: "Puffina Analytics",
+		description: "Simple privacy-first web analytics",
+		url: "https://puffinanalytics.com",
 	},
 	{
-		id: "foxchat",
-		name: "Foxchat",
-		description: "Intercom-style live chat widget for websites",
-		url: "https://foxchat.dev",
+		id: "trybit",
+		name: "Trybit",
+		description: "Realtime developer betting app",
+		url: "https://trybit.gauravnardia.com",
+	},
+	{
+		id: "httpprotocol",
+		name: "HTTP Protocol",
+		description: "Http protocol",
+		url: "https://github.com/GauravNardia/tcp-protocol",
+	},
+	{
+		id: "chess",
+		name: "Chess",
+		description: "Realtime multiplayer chess game",
+		url: "https://github.com/GauravNardia/chess",
 	},
 ];

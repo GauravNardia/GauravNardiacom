@@ -433,10 +433,9 @@ export function Favorites() {
 						<Header activePage='favorites' />
 					</div>
 					<p className='relative shrink-0 text-olive-800 dark:text-olive-100 text-sm/6 text-justify w-full animate-in animate-delay-1'>
-						I love discovering great things, whether it's a beautifully designed product, an
-						inspiring person, or a website I keep coming back to. This is my collection of those
-						gems I find on the internet and in the real world. Everything here has caught my
-						attention and stuck with me for one reason or another.
+						These are the products, people, books, websites, and tools I keep coming back to.
+						Some inspire how I think. Some have changed how I build. Others are simply so well crafted that I can't help but admire them.
+						If you want to understand my taste, this is probably the best place to start.
 					</p>
 					<div className='animate-in animate-delay-2 w-full relative z-50'>
 						<SearchAndFilters

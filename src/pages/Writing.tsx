@@ -93,10 +93,9 @@ export function Writing() {
 						<Header activePage='writing' />
 					</div>
 					<p className='relative shrink-0 text-olive-800 dark:text-olive-100 text-sm/6 text-justify w-full animate-in animate-delay-1'>
-						I write whenever inspiration strikes, which means I'm pretty irregular about it. These
-						are my raw thoughts on design, building products, and the startup journey. Some are
-						polished, others are more stream-of-consciousness, but they all capture what I was
-						thinking about at the time.
+					Most of what I know came from trying something I had no idea how to do. That's what I write about.
+					Not tutorials. Not productivity hacks. Just lessons from building products, understanding systems, and figuring things out one problem at a time.
+					If you're curious by nature, you'll probably enjoy reading these.
 					</p>
 					<div className='animate-in animate-delay-3 w-full'>
 						<ArticleList />
