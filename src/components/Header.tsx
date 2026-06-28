@@ -33,7 +33,7 @@ export function Header({ activePage }: HeaderProps = {}) {
 				className='flex h-10 items-center justify-start relative shrink-0 w-full'
 				aria-label='Go to home'>
 				<img
-					alt='Akash Bhadange profile picture'
+					alt='Gaurav Nardia profile picture'
 					className='size-10 rounded-full'
 					src='/assets/profile.png'
 					loading='eager'
@@ -44,11 +44,11 @@ export function Header({ activePage }: HeaderProps = {}) {
 			<Link
 				to='/'
 				className='flex gap-1 h-6 items-center w-full hover:opacity-70 transition-opacity'
-				aria-label='Akash Bhadange home'>
+				aria-label='Gaurav Nardia home'>
 				<h1 className='font-medium relative shrink-0 text-olive-800 dark:text-olive-100 text-xl text-justify text-nowrap whitespace-pre'>
-					<span className='font-medium'>Akash Bhadange </span>
+					<span className='font-medium'>Gaurav Nardia </span>
 					<span className='font-serif text-2xl italic'>aka</span>
-					<span className='font-medium'> @designerdada</span>
+					<span className='font-medium'> @gaurav_nardia</span>
 				</h1>
 			</Link>
 

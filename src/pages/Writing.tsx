@@ -51,43 +51,43 @@ export function Writing() {
 	return (
 		<>
 			<Helmet>
-				<title>Writing | Akash Bhadange</title>
+				<title>Writing | Gaurav Nardia</title>
 				<meta
 					name='description'
-					content='Raw thoughts on design, building products, and the startup journey by Akash Bhadange.'
+					content='Raw thoughts on design, building products, and the startup journey by Gaurav Nardia.'
 				/>
-				<link rel='canonical' href='https://www.designerdada.com/writing' />
+				<link rel='canonical' href='https://www.gauravnardia.com/writing' />
 
 				{/* Open Graph */}
 				<meta property='og:type' content='website' />
-				<meta property='og:title' content='Writing | Akash Bhadange' />
+				<meta property='og:title' content='Writing | Gaurav Nardia' />
 				<meta
 					property='og:description'
-					content='Raw thoughts on design, building products, and the startup journey by Akash Bhadange.'
+					content='Raw thoughts on design, building products, and the startup journey by Gaurav Nardia.'
 				/>
-				<meta property='og:url' content='https://www.designerdada.com/writing' />
+				<meta property='og:url' content='https://www.gauravnardia.com/writing' />
 				<meta
 					property='og:image'
-					content='https://www.designerdada.com/assets/og-images/og-writing.jpg'
+					content='https://www.gauravnardia.com/assets/og-images/og-writing.png'
 				/>
 				<meta property='og:image:width' content='1200' />
 				<meta property='og:image:height' content='630' />
 
 				{/* Twitter */}
 				<meta name='twitter:card' content='summary_large_image' />
-				<meta name='twitter:title' content='Writing | Akash Bhadange' />
+				<meta name='twitter:title' content='Writing | Gaurav Nardia' />
 				<meta
 					name='twitter:description'
-					content='Raw thoughts on design, building products, and the startup journey by Akash Bhadange.'
+					content='Raw thoughts on design, building products, and the startup journey by Gaurav Nardia.'
 				/>
 				<meta
 					name='twitter:image'
-					content='https://www.designerdada.com/assets/og-images/og-writing.jpg'
+					content='https://www.gauravnardia.com/assets/og-images/og-writing.png'
 				/>
 			</Helmet>
 			<div
 				className='bg-olive-50 dark:bg-olive-950 relative size-full min-h-screen'
-				data-name='designerdada.com/writing'>
+				data-name='gaurav_nardia.com/writing'>
 				<div className='flex flex-col gap-6 items-center mx-auto px-4 py-10 w-full max-w-xl'>
 					<div className='animate-in w-full'>
 						<Header activePage='writing' />

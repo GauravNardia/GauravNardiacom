@@ -4,8 +4,8 @@ import disposableDomains from "./disposable-domains.json";
 
 const API_URL = "https://api.autosend.com/v1";
 const API_KEY = process.env.AUTOSEND_API_KEY!;
-const FROM_EMAIL = "aka@designerdada.com";
-const FROM_NAME = "Designerdada";
+const FROM_EMAIL = "aka@gaurav_nardia.com";
+const FROM_NAME = "gaurav_nardia";
 const TOKEN_SECRET = process.env.NEWSLETTER_TOKEN_SECRET!;
 const CONFIRMATION_TEMPLATE_ID = "A-8361941152306b900290";
 
@@ -97,7 +97,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
 		// Generate confirmation token and send email
 		const token = generateToken(normalizedEmail);
-		const confirmUrl = `https://designerdada.com/api/confirm?token=${encodeURIComponent(token)}`;
+		const confirmUrl = `https://gaurav_nardia.com/api/confirm?token=${encodeURIComponent(token)}`;
 
 		const mailRes = await fetch(`${API_URL}/mails/send`, {
 			method: "POST",

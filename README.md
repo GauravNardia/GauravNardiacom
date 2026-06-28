@@ -1,6 +1,6 @@
 # Personal Website Template
 
-A minimal, SEO-optimized personal website built with React, TypeScript, Vite, and Tailwind CSS. Originally created by [Akash Bhadange](https://designerdada.com).
+A minimal, SEO-optimized personal website built with React, TypeScript, Vite, and Tailwind CSS. Originally created by [Gaurav Nardia](https://gaurav_nardia.com).
 
 ## Features
 
@@ -39,6 +39,7 @@ Update the following files with your information:
 #### Required: Site Configuration
 
 Edit `src/config/site.ts` with your details:
+
 - Site name and URL
 - Author name, email, and bio
 - Social media links
@@ -57,12 +58,14 @@ Edit `src/scripts/site-config.js` with the same information (used by build scrip
 #### Required: Meta Tags
 
 Search and replace these values across the codebase:
-- `designerdada.com` → your domain
-- `Akash Bhadange` → your name
-- `@designerdada` → your handle
-- `akash@peerlist.io` → your email
+
+- `gaurav_nardia.com` → your domain
+- `Gaurav Nardia` → your name
+- `@gaurav_nardia` → your handle
+- `gauravnardia07@gmail.com` → your email
 
 Files to update:
+
 - `src/App.tsx` (JSON-LD and meta tags)
 - `src/pages/*.tsx` (page-specific meta tags)
 - `src/scripts/generate-prerender.js`
@@ -179,4 +182,4 @@ Open source - feel free to use as a template for your own site!
 
 ## Credits
 
-Originally built by [Akash Bhadange](https://designerdada.com) ([@designerdada](https://x.com/designerdada))
+Originally built by [Gaurav Nardia](https://gaurav_nardia.com) ([@gaurav_nardia](https://x.com/gaurav_nardia))

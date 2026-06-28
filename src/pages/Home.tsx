@@ -11,7 +11,7 @@ export function Home() {
 
 	const handleCopyEmail = (e: React.MouseEvent) => {
 		e.preventDefault();
-		const email = "akash@peerlist.io";
+		const email = "gauravnardia07@gmail.com";
 
 		// Fallback method using textarea
 		const textArea = document.createElement("textarea");
@@ -123,7 +123,7 @@ export function Home() {
 						</span>
 						<span> or follow me on </span>
 						<a
-							href='https://peerlist.io/designerdada'
+							href='https://peerlist.io/gauravnardia'
 							target='_blank'
 							rel='noopener noreferrer'
 							className='link'>
@@ -131,7 +131,7 @@ export function Home() {
 						</a>
 						<span>, </span>
 						<a
-							href='https://x.com/designerdada'
+							href='https://x.com/gaurav_nardia'
 							target='_blank'
 							rel='noopener noreferrer'
 							className='link'>

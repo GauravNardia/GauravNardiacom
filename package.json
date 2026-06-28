@@ -1,5 +1,5 @@
 {
-      "name": "Designerdada.com",
+      "name": "gaurav_nardia.com",
       "version": "0.1.0",
       "private": true,
       "dependencies": {
@@ -76,7 +76,9 @@
             "vite": "^6.4.1"
       },
       "scripts": {
-            "dev": "concurrently --kill-others-on-fail \"vite\" \"node scripts/dev-api.js\"",
+            "dev": "concurrently --kill-others-on-fail \"npm run dev:frontend\" \"npm run dev:api\"",
+            "dev:frontend": "vite",
+            "dev:api": "node scripts/dev-api.js",
             "build": "npm run generate && vite build && npm run prerender",
             "generate": "npm run generate:mdx && npm run generate:sitemap && npm run generate:llms && npm run generate:disposable",
             "generate:disposable": "node src/scripts/fetch-disposable-domains.js",

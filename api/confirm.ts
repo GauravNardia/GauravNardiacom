@@ -3,8 +3,8 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 
 const API_URL = 'https://api.autosend.com/v1';
 const API_KEY = process.env.AUTOSEND_API_KEY!;
-const FROM_EMAIL = 'aka@designerdada.com';
-const FROM_NAME = 'Designerdada';
+const FROM_EMAIL = 'aka@gaurav_nardia.com';
+const FROM_NAME = 'gaurav_nardia';
 const LIST_ID = process.env.AUTOSEND_NEWSLETTER_LIST_ID!;
 const TOKEN_SECRET = process.env.NEWSLETTER_TOKEN_SECRET!;
 const WELCOME_TEMPLATE_ID = 'A-c4188498766cd7019509';
@@ -47,7 +47,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const email = verifyToken(decodeURIComponent(token));
 
   if (!email) {
-    return res.status(400).send('This confirmation link is invalid or has expired. Please subscribe again at designerdada.com.');
+    return res.status(400).send('This confirmation link is invalid or has expired. Please subscribe again at gaurav_nardia.com.');
   }
 
   if (!LIST_ID) {
@@ -93,7 +93,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     });
 
     // Redirect to home with success flag
-    return res.redirect(302, 'https://designerdada.com/?subscribed=1');
+    return res.redirect(302, 'https://gaurav_nardia.com/?subscribed=1');
   } catch (err) {
     console.error('Confirm error:', err);
     return res.status(500).send('Internal server error. Please try again.');

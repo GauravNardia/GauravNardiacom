@@ -393,38 +393,38 @@ export function Favorites() {
 	return (
 		<>
 			<Helmet>
-				<title>Favorites | Akash Bhadange</title>
+				<title>Favorites | Gaurav Nardia</title>
 				<meta
 					name='description'
 					content='A curated collection of beautifully designed products, inspiring people, and websites that have caught my attention.'
 				/>
-				<link rel='canonical' href='https://www.designerdada.com/favorites' />
+				<link rel='canonical' href='https://www.gauravnardia.com/favorites' />
 
 				{/* Open Graph */}
 				<meta property='og:type' content='website' />
-				<meta property='og:title' content='Favorites | Akash Bhadange' />
+				<meta property='og:title' content='Favorites | Gaurav Nardia' />
 				<meta
 					property='og:description'
 					content='A curated collection of beautifully designed products, inspiring people, and websites that have caught my attention.'
 				/>
-				<meta property='og:url' content='https://www.designerdada.com/favorites' />
+				<meta property='og:url' content='https://www.gauravnardia.com/favorites' />
 				<meta
 					property='og:image'
-					content='https://www.designerdada.com/assets/og-images/og-favorites.jpg'
+					content='https://www.gauravnardia.com/assets/og-images/og-favorites.png'
 				/>
 				<meta property='og:image:width' content='1200' />
 				<meta property='og:image:height' content='630' />
 
 				{/* Twitter */}
 				<meta name='twitter:card' content='summary_large_image' />
-				<meta name='twitter:title' content='Favorites | Akash Bhadange' />
+				<meta name='twitter:title' content='Favorites | Gaurav Nardia' />
 				<meta
 					name='twitter:description'
 					content='A curated collection of beautifully designed products, inspiring people, and websites that have caught my attention.'
 				/>
 				<meta
 					name='twitter:image'
-					content='https://www.designerdada.com/assets/og-images/og-favorites.jpg'
+					content='https://www.gauravnardia.com/assets/og-images/og-favorites.png'
 				/>
 			</Helmet>
 			<div className='bg-olive-50 dark:bg-olive-950 relative size-full min-h-screen'>

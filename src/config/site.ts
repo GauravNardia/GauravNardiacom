@@ -7,17 +7,17 @@
 
 export const siteConfig = {
   // Basic site info
-  name: "designerdada.com",
-  title: "Akash Bhadange",
+  name: "gauravnardia.com",
+  title: "Gaurav Nardia",
   description:
     "Product designer, founder, and photographer. Building Peerlist and AutoSend.",
-  url: "https://www.designerdada.com",
+  url: "https://www.gauravnardia.com",
 
   // Author info
   author: {
-    name: "Akash Bhadange",
-    handle: "@designerdada",
-    email: "akash@peerlist.io",
+    name: "Gaurav Nardia",
+    handle: "@gaurav_nardia",
+    email: "gauravnardia07@gmail.com",
     bio: "Product designer and founder building Peerlist and AutoSend. Over the past 15 years, I've focused on designing beautiful software that people love to use.",
     shortBio:
       "Product designer, founder, and photographer. Building Peerlist and AutoSend.",
@@ -25,26 +25,24 @@ export const siteConfig = {
 
   // Social links
   social: {
-    twitter: "https://x.com/designerdada",
-    peerlist: "https://peerlist.io/designerdada",
-    instagram: "https://instagram.com/retrolens.me",
-    github: "https://github.com/designerdada/Designerdadacom",
+    twitter: "https://x.com/gaurav_nardia",
+    peerlist: "https://peerlist.io/gauravnardia",
+    github: "https://github.com/GauravNardia",
   },
 
   // Featured projects/companies
-  projects: {
-    peerlist: "https://peerlist.io",
-    autosend: "https://autosend.com",
-    photography: "https://retrolens.me",
+  projects: { 
+    bettervercel: "https://better-vercel.com",
+    puffinanalytics: "https://puffinanalytics.com",
   },
 
   // Default images
   images: {
     profile: "/assets/profile.png",
     ogDefault: "/assets/og-images/og-home.jpg",
-    ogWriting: "/assets/og-images/og-writing.jpg",
-    ogFavorites: "/assets/og-images/og-favorites.jpg",
-    ogPhotography: "/assets/og-images/og-photography.jpg",
+    ogWriting: "/assets/og-images/og-writing.png",
+    ogFavorites: "/assets/og-images/og-favorites.png",
+    ogPhotography: "/assets/og-images/og-photography.png",
     footerSignature: "/assets/footer-signature.png",
   },
 };

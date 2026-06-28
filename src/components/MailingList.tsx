@@ -128,7 +128,7 @@ export function MailingList() {
 			<p className='font-regular text-olive-500 dark:text-olive-400 relative shrink-0 text-xs text-center'>
 				Powered by{" "}
 				<a
-					href='https://autosend.com?ref=designerdada'
+					href='https://autosend.com?ref=gaurav_nardia'
 					target='_blank'
 					rel='noopener noreferrer'
 					className='underline hover:text-olive-800 dark:hover:text-olive-100 transition-colors'>

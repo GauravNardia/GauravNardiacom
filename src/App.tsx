@@ -12,40 +12,40 @@ export default function App() {
 	return (
 		<Router>
 			<Helmet>
-				<title>Akash Bhadange aka @designerdada</title>
+				<title>Gaurav Nardia aka @gaurav_nardia</title>
 				<meta
 					name='description'
 					content='Product designer, founder, and photographer based in San Francisco. Currently building Peerlist and AutoSend.'
 				/>
-				<meta name='author' content='Akash Bhadange' />
+				<meta name='author' content='Gaurav Nardia' />
 				<meta name='viewport' content='width=device-width, initial-scale=1.0' />
 				<html lang='en' />
 
 				{/* Open Graph / Social Media */}
 				<meta property='og:type' content='website' />
-				<meta property='og:title' content='Akash Bhadange aka @designerdada' />
+				<meta property='og:title' content='Gaurav Nardia aka @gaurav_nardia' />
 				<meta
 					property='og:description'
 					content='Product designer, founder, and photographer based in San Francisco. Currently building Peerlist and AutoSend.'
 				/>
-				<meta property='og:site_name' content='designerdada.com' />
-				<meta property='og:url' content='https://www.designerdada.com' />
-				<meta property='og:image' content='https://www.designerdada.com/assets/og-images/og-home.jpg' />
+				<meta property='og:site_name' content='gaurav_nardia.com' />
+				<meta property='og:url' content='https://www.gauravnardia.com' />
+				<meta property='og:image' content='https://www.gauravnardia.com/assets/og-images/og-home.jpg' />
 				<meta property='og:image:width' content='1200' />
 				<meta property='og:image:height' content='630' />
 
 				{/* Twitter */}
 				<meta name='twitter:card' content='summary_large_image' />
-				<meta name='twitter:creator' content='@designerdada' />
-				<meta name='twitter:site' content='@designerdada' />
-				<meta name='twitter:title' content='Akash Bhadange aka @designerdada' />
+				<meta name='twitter:creator' content='@gaurav_nardia' />
+				<meta name='twitter:site' content='@gaurav_nardia' />
+				<meta name='twitter:title' content='Gaurav Nardia aka @gaurav_nardia' />
 				<meta
 					name='twitter:description'
 					content='Product designer, founder, and photographer based in San Francisco. Currently building Peerlist and AutoSend.'
 				/>
 				<meta
 					name='twitter:image'
-					content='https://www.designerdada.com/assets/og-images/og-home.jpg'
+					content='https://www.gauravnardia.com/assets/og-images/og-home.jpg'
 				/>
 
 				{/* Theme color */}
@@ -59,12 +59,12 @@ export default function App() {
 						"@graph": [
 							{
 								"@type": "Person",
-								"@id": "https://www.designerdada.com/#person",
-								name: "Akash Bhadange",
-								alternateName: "@designerdada",
-								url: "https://www.designerdada.com",
-								image: "https://www.designerdada.com/profile-image.jpg",
-								jobTitle: "Product Designer & Founder",
+								"@id": "https://www.gauravnardia.com/#person",
+								name: "Gaurav Nardia",
+								alternateName: "@gaurav_nardia",
+								url: "https://www.gauravnardia.com",
+								image: "https://www.gauravnardia.com/profile-image.jpg",
+								jobTitle: "Full Stack Developer and Thinker",
 								description:
 									"Product designer, founder, and photographer based in San Francisco. Currently building Peerlist and AutoSend.",
 								address: {
@@ -74,20 +74,19 @@ export default function App() {
 									addressCountry: "US",
 								},
 								sameAs: [
-									"https://x.com/designerdada",
-									"https://peerlist.io/designerdada",
-									"https://instagram.com/retrolens.me",
+									"https://x.com/gaurav_nardia",
+									"https://peerlist.io/gauravnardia",
 								],
 							},
 							{
 								"@type": "WebSite",
-								"@id": "https://www.designerdada.com/#website",
-								url: "https://www.designerdada.com",
-								name: "Akash Bhadange - @designerdada",
+								"@id": "https://www.gauravnardia.com/#website",
+								url: "https://www.gauravnardia.com",
+								name: "Gaurav Nardia - @gaurav_nardia",
 								description:
 									"Product designer, founder, and photographer based in San Francisco. Currently building Peerlist and AutoSend.",
 								publisher: {
-									"@id": "https://www.designerdada.com/#person",
+									"@id": "https://www.gauravnardia.com/#person",
 								},
 								inLanguage: "en-US",
 							},

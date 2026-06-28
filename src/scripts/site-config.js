@@ -7,16 +7,16 @@
 
 export const siteConfig = {
   // Site URL (without trailing slash)
-  url: "https://www.designerdada.com",
+  url: "https://www.gauravnardia.com",
 
   // Site name
-  name: "designerdada.com",
+  name: "gauravnardia.com",
 
   // Author info
   author: {
-    name: "Akash Bhadange",
-    handle: "@designerdada",
-    email: "akash@peerlist.io",
+    name: "Gaurav Nardia",
+    handle: "@gaurav_nardia",
+    email: "gauravnardia07@gmail.com",
     bio: "Product designer and founder building Peerlist and AutoSend. Over the past 15 years, I've focused on designing beautiful software that people love to use.",
     shortBio:
       "Product designer, founder, and photographer. Building Peerlist and AutoSend.",
@@ -24,8 +24,7 @@ export const siteConfig = {
 
   // Social links
   social: {
-    twitter: "https://x.com/designerdada",
-    peerlist: "https://peerlist.io/designerdada",
-    instagram: "https://instagram.com/designerdada",
+    twitter: "https://x.com/gaurav_nardia",
+    peerlist: "https://peerlist.io/gauravnardia",
   },
 };

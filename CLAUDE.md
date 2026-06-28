@@ -7,6 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 This is a minimal, SEO-optimized personal website template, built with React 18, TypeScript, Vite, and Tailwind CSS. The site features a centered single-column layout (544px max width), dark mode support, and an MDX-powered blog.
 
 **Tech Stack:**
+
 - React 18 with TypeScript
 - Vite (build tool)
 - Tailwind CSS v3 (styling)
@@ -20,10 +21,12 @@ This is a minimal, SEO-optimized personal website template, built with React 18,
 When someone forks this repo, they need to customize these files:
 
 ### Configuration Files
+
 - `src/config/site.ts` - Main site configuration (name, URL, author, social links)
 - `src/scripts/site-config.js` - Same config for build scripts
 
 ### Personal Content
+
 - `public/assets/profile.png` - Profile photo
 - `public/assets/footer-signature.png` - Footer signature/logo
 - `public/assets/og-images/` - Open Graph images
@@ -31,13 +34,16 @@ When someone forks this repo, they need to customize these files:
 - `src/components/Header.tsx` - Name display
 
 ### Files with Hardcoded URLs (need search/replace)
-Search and replace `designerdada.com` with their domain in:
+
+Search and replace `gaurav_nardia.com` with their domain in:
+
 - `src/App.tsx` (JSON-LD, meta tags)
 - `src/pages/*.tsx` (page meta tags)
 - `src/scripts/generate-prerender.js`
 - `src/content/writing/*.mdx` (ogImage URLs in frontmatter)
 
 ### Environment Variables (Optional - for photography feature)
+
 - Copy `.env.example` to `.env`
 - Set `VITE_WORKER_API_URL` and `VITE_R2_PUBLIC_URL`
 
@@ -72,6 +78,7 @@ npm run generate:llms
 ## Build Process
 
 The build runs in this order:
+
 1. **Generate**: Runs all generation scripts (MDX index, sitemap, llms.txt)
 2. **Vite Build**: Creates production bundle in `/build` directory
 3. **Prerender**: Generates static HTML for routes
@@ -87,6 +94,7 @@ The site uses a custom MDX processing pipeline:
 3. **MDX Loader** (`/src/utils/mdxLoader.ts`): Uses Vite's `import.meta.glob` to load MDX files as raw strings. Parses frontmatter and caches articles at runtime.
 
 **Required MDX frontmatter fields:**
+
 - `title`: Article title
 - `description`: SEO description
 - `publishDate`: Format: DD.MMM.YYYY
@@ -131,6 +139,7 @@ The alias `@` resolves to `./src`.
 ### SEO Implementation
 
 The site has comprehensive SEO:
+
 - Open Graph and Twitter Card meta tags on all pages
 - JSON-LD structured data (Person, Website, BlogPosting schemas)
 - Article-specific metadata with publish/modified dates
@@ -169,6 +178,7 @@ The site has comprehensive SEO:
 ## Deployment
 
 The site is configured for Vercel with zero-config deployment:
+
 - Build command: `npm run build`
 - Output directory: `build`
 - Vercel automatically runs all build scripts

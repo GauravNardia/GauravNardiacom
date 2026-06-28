@@ -132,9 +132,9 @@ export function WritingDetail() {
 	}
 
 	const articleData = articleContents[id];
-	const canonicalUrl = `https://www.designerdada.com/writing/${id}`;
+	const canonicalUrl = `https://www.gauravnardia.com/writing/${id}`;
 	const ogImage =
-		articleData.metadata.ogImage || "https://www.designerdada.com/media/og-images/og-default.jpg";
+		articleData.metadata.ogImage || "https://www.gauravnardia.com/media/og-images/og-default.jpg";
 	const publishDate = articleData.metadata.publishDate;
 	const modifiedDate = articleData.metadata.modifiedDate || publishDate;
 
@@ -152,13 +152,13 @@ export function WritingDetail() {
 		dateModified: modifiedDate,
 		author: {
 			"@type": "Person",
-			name: articleData.metadata.author || "Akash Bhadange",
-			url: "https://www.designerdada.com",
+			name: articleData.metadata.author || "Gaurav Nardia",
+			url: "https://www.gauravnardia.com",
 		},
 		publisher: {
 			"@type": "Person",
-			name: "Akash Bhadange",
-			url: "https://www.designerdada.com",
+			name: "Gaurav Nardia",
+			url: "https://www.gauravnardia.com",
 		},
 		mainEntityOfPage: {
 			"@type": "WebPage",
@@ -176,13 +176,13 @@ export function WritingDetail() {
 				"@type": "ListItem",
 				position: 1,
 				name: "Home",
-				item: "https://www.designerdada.com",
+				item: "https://www.gauravnardia.com",
 			},
 			{
 				"@type": "ListItem",
 				position: 2,
 				name: "Writing",
-				item: "https://www.designerdada.com/writing",
+				item: "https://www.gauravnardia.com/writing",
 			},
 			{
 				"@type": "ListItem",
@@ -196,9 +196,9 @@ export function WritingDetail() {
 	return (
 		<>
 			<Helmet>
-				<title>{articleData.metadata.title} | Akash Bhadange</title>
+				<title>{articleData.metadata.title} | Gaurav Nardia</title>
 				<meta name='description' content={articleData.metadata.description} />
-				<meta name='author' content={articleData.metadata.author || "Akash Bhadange"} />
+				<meta name='author' content={articleData.metadata.author || "Gaurav Nardia"} />
 				{articleData.metadata.keywords && (
 					<meta name='keywords' content={articleData.metadata.keywords} />
 				)}
@@ -209,15 +209,15 @@ export function WritingDetail() {
 				<meta property='og:title' content={articleData.metadata.title} />
 				<meta property='og:description' content={articleData.metadata.description} />
 				<meta property='og:url' content={canonicalUrl} />
-				<meta property='og:site_name' content='Akash Bhadange' />
+				<meta property='og:site_name' content='Gaurav Nardia' />
 				<meta property='og:image' content={ogImage} />
 				<meta property='og:image:width' content='1200' />
 				<meta property='og:image:height' content='630' />
 
 				{/* Twitter Card */}
 				<meta name='twitter:card' content='summary_large_image' />
-				<meta name='twitter:site' content='@designerdada' />
-				<meta name='twitter:creator' content='@designerdada' />
+				<meta name='twitter:site' content='@gaurav_nardia' />
+				<meta name='twitter:creator' content='@gaurav_nardia' />
 				<meta name='twitter:title' content={articleData.metadata.title} />
 				<meta name='twitter:description' content={articleData.metadata.description} />
 				<meta name='twitter:image' content={ogImage} />
@@ -225,7 +225,7 @@ export function WritingDetail() {
 				{/* Article specific */}
 				<meta property='article:published_time' content={publishDate} />
 				<meta property='article:modified_time' content={modifiedDate} />
-				<meta property='article:author' content={articleData.metadata.author || "Akash Bhadange"} />
+				<meta property='article:author' content={articleData.metadata.author || "Gaurav Nardia"} />
 
 				{/* JSON-LD Structured Data */}
 				<script type='application/ld+json'>{JSON.stringify(articleJsonLd)}</script>
@@ -242,12 +242,12 @@ export function WritingDetail() {
 										<Link to='/' className='flex gap-2 items-center'>
 											<div className='relative rounded-full shrink-0 size-6'>
 												<img
-													alt='Akash Bhadange'
+													alt='Gaurav Nardia'
 													className='absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-full size-full'
 													src='/assets/profile.png'
 												/>
 											</div>
-											<span className='text-sm'>Akash Bhadange</span>
+											<span className='text-sm'>Gaurav Nardia</span>
 										</Link>
 									</BreadcrumbLink>
 								</BreadcrumbItem>

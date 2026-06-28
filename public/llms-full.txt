@@ -1,14 +1,14 @@
-# designerdada.com
+# gauravnardia.com
 
 Product designer, founder, and photographer. Building Peerlist and AutoSend.
 
-> https://www.designerdada.com
+> https://www.gauravnardia.com
 
 ---
 
 ## About
 
-I'm Akash Bhadange (@designerdada), Product designer and founder building Peerlist and AutoSend. Over the past 15 years, I've focused on designing beautiful software that people love to use.
+I'm Gaurav Nardia (@gaurav_nardia), Product designer and founder building Peerlist and AutoSend. Over the past 15 years, I've focused on designing beautiful software that people love to use.
 
 I write about design, building products, and the startup journey. When not designing, I shoot street photography on film.
 
@@ -16,9 +16,9 @@ I write about design, building products, and the startup journey. When not desig
 
 ## Navigation
 
-- Home: https://www.designerdada.com
-- Writing: https://www.designerdada.com/writing
-- Favorites: https://www.designerdada.com/favorites
+- Home: https://www.gauravnardia.com
+- Writing: https://www.gauravnardia.com/writing
+- Favorites: https://www.gauravnardia.com/favorites
 
 ---
 
@@ -26,7 +26,7 @@ I write about design, building products, and the startup journey. When not desig
 
 ### Buy a Domain
 
-URL: https://www.designerdada.com/writing/buy-a-domain
+URL: https://www.gauravnardia.com/writing/buy-a-domain
 Published: 02.Dec.2025
 Description: The first thing you should do when starting a project is buy a domain. Not set up your tech stack. Not design your logo. Buy a domain. Here's why.
 
@@ -60,7 +60,7 @@ The domain comes first. Everything else follows.
 
 ### Design Is The Moat
 
-URL: https://www.designerdada.com/writing/design-is-the-moat
+URL: https://www.gauravnardia.com/writing/design-is-the-moat
 Published: 15.Nov.2025
 Description: Design is no longer a layer you add at the end. It is the product. And it's the moat that will matter most.
 
@@ -86,7 +86,7 @@ The future belongs to those who can ship, but more importantly, to those who can
 
 ### Growth Without Hacks
 
-URL: https://www.designerdada.com/writing/growth-without-hacks
+URL: https://www.gauravnardia.com/writing/growth-without-hacks
 Published: 05.Nov.2025
 Description: What really drives startup growth. Marketing isn't about shiny tools or growth hacks. It's about understanding people, solving their problems, and showing up consistently.
 
@@ -107,6 +107,7 @@ But when you look at what actually makes startups successful, it's not tricks or
 Here are a few principles I've picked up from Paul Graham's writing and YC's way of building startups:
 
 ## Make a Few People Extremely Happy
+
 In the early days of a startup, your goal is not to acquire thousands of users. Your goal is to make just a few people completely love your product.
 
 When you have 10 users who can't live without what you've built, you're onto something real. These people become your evangelists. They give you thoughtful feedback, tell their friends, and sometimes even become your first paying customers or contributors.
@@ -116,11 +117,13 @@ Most startups fail not because they didn't get some users, but because they neve
 > "It's better to have 100 people who love you than 1,000 who sort of like you."
 
 ## Talk to Your Users. Really Talk to Them.
+
 This one cannot be overstated: talk to your users. Not through forms or feedback widgets, actually talk to them. Schedule a 15-minute call. Message them directly. Ask them what's working, what's frustrating, and what they wish your product could do better.
 
 These conversations will unlock insights that no analytics tool or A/B test can reveal. You'll learn how users describe your product in their own words. You'll see which parts of your product confuse them. You'll discover tiny frustrations that no metric would have ever exposed.
 
 ## Start Small, Go Deep
+
 One of the most common early-stage startup mistakes is trying to appeal to everyone. The logic seems sound: a bigger market means a bigger opportunity, right?
 
 But in reality, when you build for "everyone," you end up building something that resonates with no one. That is exactly why we solely focusing on "people in tech".
@@ -130,6 +133,7 @@ When you focus on solving one group's problems really well, your product becomes
 Airbnb didn't start by targeting the global travel market. They started by helping people find a place to stay during conferences. Stripe didn't start with "all payments"—they started with developers.
 
 ## Customer Support Is Marketing
+
 Most people view customer support as a backend function. But in a startup, great support is one of your strongest marketing channels.
 
 Why? Because early users remember how you made them feel. When you respond quickly, fix bugs promptly, or go out of your way to help, even for a single user, they'll remember it. And they'll talk about it.
@@ -139,6 +143,7 @@ It builds trust. It builds loyalty. And it creates stories worth sharing.
 When a startup replies within minutes and solves your problem on a Sunday afternoon, it stands out. That's marketing.
 
 ## Measure What Matters
+
 In the early stage, it's tempting to track everything: impressions, click-through rates, likes, followers, time on page. But most of these numbers don't matter if the fundamentals are broken.
 
 What really matters? Usually just a handful of metrics: activation (are new users experiencing the core value?), retention (are they coming back?), and referrals (are they telling others?).
@@ -146,6 +151,7 @@ What really matters? Usually just a handful of metrics: activation (are new user
 In last few months, we solely focused on retention. Because if people aren't coming back, nothing else matters.
 
 ## Grow Through Systems, Not Hacks
+
 The internet loves the idea of "growth hacks". Shortcuts that magically skyrocket your users. But those spikes rarely last. I have experienced that!
 
 Instead, real growth comes from building systems: talking to users every day, shipping small improvements regularly, refining your messaging, iterating on onboarding, and making the product better week after week.
@@ -153,6 +159,7 @@ Instead, real growth comes from building systems: talking to users every day, sh
 It's slower, but far more sustainable. And over time, this compounding effort becomes your competitive advantage.
 
 ## Learn From People Who Say No
+
 When someone doesn't sign up, doesn't return, or outright says "this isn't for me", don't ignore it. Ask them why.
 
 Most people won't give feedback unless you ask. But when you do, you often hear the truth: maybe your onboarding was confusing, your messaging didn't make sense, or your product didn't solve a real pain.
@@ -165,8 +172,8 @@ Every "no" is an opportunity to learn, refine, and improve your product or posit
 
 Marketing isn't about shiny tools or growth hacks. It's about understanding people, solving their problems, and showing up consistently.
 
-So if you're building something today, don't ask: *How do I get more users?
-Ask: How do I make the next 10 users love what I'm building?*
+So if you're building something today, don't ask: _How do I get more users?
+Ask: How do I make the next 10 users love what I'm building?_
 
 That's the real marketing strategy.
 
@@ -176,7 +183,7 @@ Highly recommend to read Paul Graham's [Startups in 13 Sentences](https://www.pa
 
 ### Make Something YOU Want
 
-URL: https://www.designerdada.com/writing/make-something-you-want
+URL: https://www.gauravnardia.com/writing/make-something-you-want
 Published: 01.Nov.2025
 Description: The best products come from personal frustration. When you build something you actually need, you understand the problem deeply, you know what's missing, and you have the motivation to make it great.
 
@@ -202,13 +209,21 @@ In the end, the best projects come from a place of genuine need and personal exp
 
 Lastly - Here's Jack Dorsey on why building something for yourself can be better than trying to solve a problem.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tA6MB1y1DDM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/tA6MB1y1DDM"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
 
 ---
 
 ### Manufacturing Luck
 
-URL: https://www.designerdada.com/writing/manufacturing-luck
+URL: https://www.gauravnardia.com/writing/manufacturing-luck
 Published: 09.Jun.2026
 Description: Luck isn't random. It's the result of years of putting things into the world before you needed anything back. Build the surface area where luck lands.
 
@@ -234,7 +249,7 @@ Luck doesn't fall from the sky. It finds the people who made themselves findable
 
 ### Stop Writing Fictional Case Studies
 
-URL: https://www.designerdada.com/writing/stop-fictional-case-studies
+URL: https://www.gauravnardia.com/writing/stop-fictional-case-studies
 Published: 26.Nov.2025
 Description: Dear product designers, stop writing fictional case studies and start collaborating with developers on side projects to build credible proof-of-work.
 
@@ -277,6 +292,7 @@ All the best!
 ---
 
 If you have read till here, I have 2 asks from you —
+
 - Share this with your designer peers.
 - Also read [portfolio advice](https://hvpandya.com/portfolio-advice?ref=designgiri.com) by [Hardik Pandya](https://peerlist.io/hardikpandya?ref=designgiri.com). It's a good one.
 
@@ -284,7 +300,7 @@ If you have read till here, I have 2 asks from you —
 
 ### Taste Can't Be Prompted
 
-URL: https://www.designerdada.com/writing/taste-cant-be-prompted
+URL: https://www.gauravnardia.com/writing/taste-cant-be-prompted
 Published: 17.Apr.2026
 Description: On designing for humans and agents, what taste actually means, and why "feels right" is a design problem AI can't solve.
 
@@ -334,7 +350,7 @@ Every product in the market will eventually work. AI will make sure of that. The
 
 ### Trying to Be Human
 
-URL: https://www.designerdada.com/writing/trying-to-be-human
+URL: https://www.gauravnardia.com/writing/trying-to-be-human
 Published: 07.Dec.2025
 Description: Why human creation will matter more, not less, in an age of infinite AI-generated content.
 
@@ -376,7 +392,7 @@ Making choices that require my judgment. Creating things that couldn't exist wit
 
 ## Contact
 
-Email: akash@peerlist.io
-Peerlist: https://peerlist.io/designerdada
-X (Twitter): https://x.com/designerdada
-Instagram: https://instagram.com/designerdada
+Email: gauravnardia07@gmail.com
+Peerlist: https://peerlist.io/gauravnardia
+X (Twitter): https://x.com/gaurav_nardia
+Instagram: undefined

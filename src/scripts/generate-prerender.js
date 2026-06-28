@@ -72,12 +72,12 @@ function injectMetaTags(html, metadata, articleContent = null) {
   $('script[type="application/ld+json"]').remove();
 
   // Update title
-  $('title').text(`${metadata.title} | Akash Bhadange`);
+  $('title').text(`${metadata.title} | Gaurav Nardia`);
 
   // Add basic meta tags with data-react-helmet attribute to prevent duplicates
   $('head').append(`
     <meta name="description" content="${metadata.description}" data-react-helmet="true" />
-    <meta name="author" content="${metadata.author || 'Akash Bhadange'}" data-react-helmet="true" />
+    <meta name="author" content="${metadata.author || 'Gaurav Nardia'}" data-react-helmet="true" />
     ${metadata.keywords ? `<meta name="keywords" content="${metadata.keywords}" data-react-helmet="true" />` : ''}
     <link rel="canonical" href="${metadata.canonicalUrl}" data-react-helmet="true" />
 
@@ -86,15 +86,15 @@ function injectMetaTags(html, metadata, articleContent = null) {
     <meta property="og:title" content="${metadata.title}" data-react-helmet="true" />
     <meta property="og:description" content="${metadata.description}" data-react-helmet="true" />
     <meta property="og:url" content="${metadata.canonicalUrl}" data-react-helmet="true" />
-    <meta property="og:site_name" content="Akash Bhadange" data-react-helmet="true" />
+    <meta property="og:site_name" content="Gaurav Nardia" data-react-helmet="true" />
     <meta property="og:image" content="${metadata.ogImage}" data-react-helmet="true" />
     <meta property="og:image:width" content="1200" data-react-helmet="true" />
     <meta property="og:image:height" content="630" data-react-helmet="true" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" data-react-helmet="true" />
-    <meta name="twitter:site" content="@designerdada" data-react-helmet="true" />
-    <meta name="twitter:creator" content="@designerdada" data-react-helmet="true" />
+    <meta name="twitter:site" content="@gaurav_nardia" data-react-helmet="true" />
+    <meta name="twitter:creator" content="@gaurav_nardia" data-react-helmet="true" />
     <meta name="twitter:title" content="${metadata.title}" data-react-helmet="true" />
     <meta name="twitter:description" content="${metadata.description}" data-react-helmet="true" />
     <meta name="twitter:image" content="${metadata.ogImage}" data-react-helmet="true" />
@@ -102,7 +102,7 @@ function injectMetaTags(html, metadata, articleContent = null) {
     <!-- Article specific -->
     <meta property="article:published_time" content="${metadata.publishDate}" data-react-helmet="true" />
     <meta property="article:modified_time" content="${metadata.modifiedDate || metadata.publishDate}" data-react-helmet="true" />
-    <meta property="article:author" content="${metadata.author || 'Akash Bhadange'}" data-react-helmet="true" />
+    <meta property="article:author" content="${metadata.author || 'Gaurav Nardia'}" data-react-helmet="true" />
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -116,13 +116,13 @@ function injectMetaTags(html, metadata, articleContent = null) {
       "dateModified": metadata.modifiedDate || metadata.publishDate,
       "author": {
         "@type": "Person",
-        "name": metadata.author || "Akash Bhadange",
-        "url": "https://www.designerdada.com"
+        "name": metadata.author || "Gaurav Nardia",
+        "url": "https://www.gauravnardia.com"
       },
       "publisher": {
         "@type": "Person",
-        "name": "Akash Bhadange",
-        "url": "https://www.designerdada.com"
+        "name": "Gaurav Nardia",
+        "url": "https://www.gauravnardia.com"
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
@@ -145,7 +145,7 @@ function injectMetaTags(html, metadata, articleContent = null) {
         <article style="max-width: 65ch; margin: 0 auto; padding: 2rem; font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; color: #333;">
           <header>
             <h1 style="font-size: 2rem; font-weight: 600; margin-bottom: 0.5rem;">${metadata.title}</h1>
-            <p style="color: #666; font-size: 0.9rem;">By ${metadata.author || 'Akash Bhadange'} • ${metadata.publishDate}</p>
+            <p style="color: #666; font-size: 0.9rem;">By ${metadata.author || 'Gaurav Nardia'} • ${metadata.publishDate}</p>
           </header>
           <main style="margin-top: 2rem;">
             ${htmlContent}
@@ -183,12 +183,12 @@ function prerenderArticles() {
       const metadata = {
         title: frontmatter.title,
         description: frontmatter.description,
-        author: frontmatter.author || 'Akash Bhadange',
+        author: frontmatter.author || 'Gaurav Nardia',
         publishDate: frontmatter.publishDate,
         modifiedDate: frontmatter.modifiedDate,
         keywords: frontmatter.keywords,
-        ogImage: frontmatter.ogImage || 'https://www.designerdada.com/assets/og-images/og-writing.jpg',
-        canonicalUrl: `https://www.designerdada.com/writing/${articleId}`
+        ogImage: frontmatter.ogImage || 'https://www.gauravnardia.com/assets/og-images/og-writing.png',
+        canonicalUrl: `https://www.gauravnardia.com/writing/${articleId}`
       };
 
       // Generate HTML with injected meta tags and article content
@@ -218,27 +218,27 @@ function prerenderStaticPages() {
   const pages = [
     {
       path: '',
-      title: 'Akash Bhadange',
+      title: 'Gaurav Nardia',
       description: 'Product designer, founder, and builder. Currently building Peerlist.',
-      ogImage: 'https://www.designerdada.com/assets/og-images/og-home.jpg'
+      ogImage: 'https://www.gauravnardia.com/assets/og-images/og-home.jpg'
     },
     {
       path: 'writing',
-      title: 'Writing | Akash Bhadange',
+      title: 'Writing | Gaurav Nardia',
       description: 'Thoughts on design, products, and building things that matter.',
-      ogImage: 'https://www.designerdada.com/assets/og-images/og-writing.jpg'
+      ogImage: 'https://www.gauravnardia.com/assets/og-images/og-writing.png'
     },
     {
       path: 'favorites',
-      title: 'Favorites | Akash Bhadange',
+      title: 'Favorites | Gaurav Nardia',
       description: 'A curated collection of beautifully designed products, inspiring people, and websites that have caught my attention.',
-      ogImage: 'https://www.designerdada.com/assets/og-images/og-favorites.jpg'
+      ogImage: 'https://www.gauravnardia.com/assets/og-images/og-favorites.png'
     },
     {
       path: 'photography',
-      title: 'Photography | Akash Bhadange',
+      title: 'Photography | Gaurav Nardia',
       description: 'A collection of photographs capturing moments and perspectives.',
-      ogImage: 'https://www.designerdada.com/assets/og-images/og-photography.jpg'
+      ogImage: 'https://www.gauravnardia.com/assets/og-images/og-photography.png'
     }
   ];
 
@@ -258,19 +258,19 @@ function prerenderStaticPages() {
 
       // Add canonical and Open Graph tags with data-react-helmet to prevent duplicates
       $('head').append(`
-        <link rel="canonical" href="https://www.designerdada.com/${page.path}" data-react-helmet="true" />
+        <link rel="canonical" href="https://www.gauravnardia.com/${page.path}" data-react-helmet="true" />
 
         <meta property="og:type" content="website" data-react-helmet="true" />
         <meta property="og:title" content="${page.title}" data-react-helmet="true" />
         <meta property="og:description" content="${page.description}" data-react-helmet="true" />
-        <meta property="og:url" content="https://www.designerdada.com/${page.path}" data-react-helmet="true" />
+        <meta property="og:url" content="https://www.gauravnardia.com/${page.path}" data-react-helmet="true" />
         <meta property="og:image" content="${page.ogImage}" data-react-helmet="true" />
         <meta property="og:image:width" content="1200" data-react-helmet="true" />
         <meta property="og:image:height" content="630" data-react-helmet="true" />
 
         <meta name="twitter:card" content="summary_large_image" data-react-helmet="true" />
-        <meta name="twitter:site" content="@designerdada" data-react-helmet="true" />
-        <meta name="twitter:creator" content="@designerdada" data-react-helmet="true" />
+        <meta name="twitter:site" content="@gaurav_nardia" data-react-helmet="true" />
+        <meta name="twitter:creator" content="@gaurav_nardia" data-react-helmet="true" />
         <meta name="twitter:title" content="${page.title}" data-react-helmet="true" />
         <meta name="twitter:description" content="${page.description}" data-react-helmet="true" />
         <meta name="twitter:image" content="${page.ogImage}" data-react-helmet="true" />
