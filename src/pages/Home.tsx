@@ -4,6 +4,7 @@ import { Divider } from "../components/Divider";
 import { ProjectsSection } from "../components/ProjectsSection";
 import { WritingSection } from "../components/WritingSection";
 import { useState } from "react";
+import { ExperienceSection } from "@/components/ExperienceSection";
 
 export function Home() {
 	const [showTooltip, setShowTooltip] = useState(false);
@@ -149,6 +150,16 @@ export function Home() {
 				{/* Projects Section */}
 				<div className='animate-in animate-delay-6 w-full'>
 					<ProjectsSection />
+				</div>
+
+				{/* Divider */}
+				<div className='animate-in animate-delay-7'>
+					<Divider />
+				</div>
+
+				{/* Experience Section */}
+				<div className='animate-in animate-delay-6 w-full'>
+					<ExperienceSection />
 				</div>
 
 				{/* Divider */}

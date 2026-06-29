@@ -42,7 +42,7 @@ function prefetchAllOgImages() {
 	});
 }
 
-type Category = "All" | "Products" | "People" | "Sites" | "Fonts" | "Movies";
+type Category = "All" | "Products" | "People" | "Sites" | "Books" | "Podcasts";
 
 function SearchIcon({ isHovered }: { isHovered: boolean }) {
 	const strokeColor = isHovered ? "currentColor" : "#7c7c67";
@@ -86,7 +86,7 @@ function SearchAndFilters({
 	const [isInputHovered, setIsInputHovered] = useState(false);
 	const [isInputFocused, setIsInputFocused] = useState(false);
 	const dropdownRef = useRef<HTMLDivElement>(null);
-	const categories: Category[] = ["All", "Products", "People", "Sites", "Fonts", "Movies"];
+	const categories: Category[] = ["All", "Products", "People", "Sites", "Books", "Podcasts"];
 
 	// Close dropdown when clicking outside
 	useEffect(() => {
@@ -433,9 +433,11 @@ export function Favorites() {
 						<Header activePage='favorites' />
 					</div>
 					<p className='relative shrink-0 text-olive-800 dark:text-olive-100 text-sm/6 text-justify w-full animate-in animate-delay-1'>
-						These are the products, people, books, websites, and tools I keep coming back to.
-						Some inspire how I think. Some have changed how I build. Others are simply so well crafted that I can't help but admire them.
-						If you want to understand my taste, this is probably the best place to start.
+						This is my corner of the internet.
+					    A collection of products, people, books, websites, and ideas that have influenced how I think and build. Some raised my standards. Some changed my perspective. Others are simply so well crafted that I keep coming back to them.
+
+						If you want to understand my taste, start here.
+
 					</p>
 					<div className='animate-in animate-delay-2 w-full relative z-50'>
 						<SearchAndFilters

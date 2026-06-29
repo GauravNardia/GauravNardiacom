@@ -21,7 +21,7 @@ export const projects: Project[] = [
 	{
 		id: "trybit",
 		name: "Trybit",
-		description: "Realtime developer betting app",
+		description: "Realtime developer betting app (made me $400 in 2 months)",
 		url: "https://trybit.gauravnardia.com",
 	},
 	{
@@ -36,4 +36,25 @@ export const projects: Project[] = [
 		description: "Realtime multiplayer chess game",
 		url: "https://github.com/GauravNardia/chess",
 	},
+];
+
+export const experience: Project[] = [
+	{
+		id: "peerlist",
+		name: "Peerlist",
+		description: "Full Stack developer - AUG.2025 - JAN.2026",
+		url: "https://peerlist.io",
+	},
+	{
+		id: "klavish",
+		name: "Klavish AI",
+		description: "Open Source Contributor - AUG.2025 - JAN.2026",
+		url: "https://www.klavis.ai",
+	},
+	{
+		id: "nimbus",
+		name: "Nimbus Storage",
+		description: "Open Source Contributor - AUG.2025 - JAN.2026",
+		url: "https://nimbus.storage",
+	}
 ];
