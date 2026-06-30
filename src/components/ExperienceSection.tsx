@@ -1,4 +1,4 @@
-import { experience, projects } from "../data/projects";
+import { experience } from "../data/projects";
 
 function getFaviconUrl(url: string) {
     try {

@@ -15,7 +15,6 @@ export function Header({ activePage }: HeaderProps = {}) {
 		{ to: "/", label: "Home", key: "home" },
 		{ to: "/writing", label: "Writing", key: "writing" },
 		{ to: "/favorites", label: "Favorites", key: "favorites" },
-		{ to: "/photography", label: "Photography", key: "photography" },
 	] as const;
 
 	const navLinkClass = (key: string) =>

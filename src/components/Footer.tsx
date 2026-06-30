@@ -11,7 +11,7 @@ export function Footer() {
 			/>
 
 			{/* Newsletter */}
-			<MailingList />
+			{/* <MailingList /> */}
 		</div>
 	);
 }

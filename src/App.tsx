@@ -100,8 +100,8 @@ export default function App() {
 				<Route path='/writing' element={<Writing />} />
 				<Route path='/writing/:id' element={<WritingDetail />} />
 				<Route path='/favorites' element={<Favorites />} />
-				<Route path='/photography' element={<Photography />} />
-				<Route path='/admin/photos' element={<AdminPhotos />} />
+				{/* <Route path='/photography' element={<Photography />} />
+				<Route path='/admin/photos' element={<AdminPhotos />} /> */}
 			</Routes>
 			<Analytics />
 		</Router>

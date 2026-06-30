@@ -4,12 +4,13 @@
 
 // Sorted article list (newest first) - extracted from MDX frontmatter
 export const articleList: { id: string; title: string; date: string }[] = [
-  { id: 'manufacturing-luck', title: 'Manufacturing Luck', date: '09.Jun.2026' },
-  { id: 'taste-cant-be-prompted', title: 'Taste Can\'t Be Prompted', date: '17.Apr.2026' },
-  { id: 'trying-to-be-human', title: 'Trying to Be Human', date: '07.Dec.2025' },
-  { id: 'buy-a-domain', title: 'Buy a Domain', date: '02.Dec.2025' },
-  { id: 'stop-fictional-case-studies', title: 'Stop Writing Fictional Case Studies', date: '26.Nov.2025' },
-  { id: 'design-is-the-moat', title: 'Design Is The Moat', date: '15.Nov.2025' },
-  { id: 'growth-without-hacks', title: 'Growth Without Hacks', date: '05.Nov.2025' },
-  { id: 'make-something-you-want', title: 'Make Something YOU Want', date: '01.Nov.2025' },
+  { id: 'docker-for-developers', title: 'Docker for developers', date: '13.Apr.2026' },
+  { id: 'real-time-systems', title: 'Real-Time Systems — Quick Notes', date: '11.Apr.2026' },
+  { id: 'oauth-and-pkce', title: 'OAuth & PKCE', date: '10.Apr.2026' },
+  { id: 'deploy-frontend-on-aws', title: 'Deploy Frontend on AWS', date: '20.Mar.2026' },
+  { id: 'rate-limiting', title: 'Rate Limiting', date: '17.Mar.2026' },
+  { id: 'system-design-for-beginners', title: 'System Design For Beginners', date: '14.Mar.2026' },
+  { id: 'i-built-my-own-analytics-tool', title: 'I Built My Own Analytics Tool. Here\'s How and Why.', date: '13.Mar.2026' },
+  { id: 'reverse-engineering', title: 'Reverse Engineering', date: '022.Feb.2026' },
+  { id: 'building-before-you-feel-ready', title: 'Building Before You Feel Ready', date: '21.Feb.2026' },
 ];
