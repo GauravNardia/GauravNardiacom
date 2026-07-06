@@ -219,13 +219,13 @@ function prerenderStaticPages() {
     {
       path: '',
       title: 'Gaurav Nardia',
-      description: 'Product designer, founder, and builder. Currently building Peerlist.',
+      description: 'Full Stack Developer.',
       ogImage: 'https://www.gauravnardia.com/assets/og-images/og-home.jpg'
     },
     {
       path: 'writing',
       title: 'Writing | Gaurav Nardia',
-      description: 'Thoughts on design, products, and building things that matter.',
+      description: 'Thoughts on tech, products, and building things that matter.',
       ogImage: 'https://www.gauravnardia.com/assets/og-images/og-writing.png'
     },
     {
