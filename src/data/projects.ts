@@ -48,13 +48,13 @@ export const experience: Project[] = [
 	{
 		id: "klavish",
 		name: "Klavish AI",
-		description: "Open Source Contributor - AUG.2025 - JAN.2026",
+		description: "Open Source Contributor - JUN.2025 - JUL.2025",
 		url: "https://www.klavis.ai",
 	},
 	{
 		id: "nimbus",
 		name: "Nimbus Storage",
-		description: "Open Source Contributor - AUG.2025 - JAN.2026",
+		description: "Open Source Contributor - JAN.2025 - MAY.2025",
 		url: "https://nimbus.storage",
 	}
 ];
