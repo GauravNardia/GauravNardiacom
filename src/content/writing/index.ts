@@ -4,6 +4,7 @@
 
 // Sorted article list (newest first) - extracted from MDX frontmatter
 export const articleList: { id: string; title: string; date: string }[] = [
+  { id: 'event-sourcing', title: 'Event Sourcing Architecture', date: '07.MAY.2026' },
   { id: 'docker-for-developers', title: 'Docker for developers', date: '13.Apr.2026' },
   { id: 'real-time-systems', title: 'Real-Time Systems — Quick Notes', date: '11.Apr.2026' },
   { id: 'oauth-and-pkce', title: 'OAuth & PKCE', date: '10.Apr.2026' },

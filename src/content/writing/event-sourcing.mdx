@@ -1,0 +1,103 @@
+---
+title: Event Sourcing Architecture
+description: Event sourcing Architecture in detail
+publishDate: 07.MAY.2026
+modifiedDate: 07.MAY.2026
+author: Gaurav Nardia
+ogImage: https://gauravnardia.com/assets/og-images/event-sourcing.jpg
+keywords: System-design, Event-sourcing, Events
+---
+
+Today I read about event sourcing. So I thought I should write an article about it so that I can revise it in the future.
+
+So, by definition, event sourcing is a software design pattern where state changes are saved as a sequence of immutable events in append-only logs rather than overwriting the current state.
+
+Let's take an example of a video processing system.
+
+When a user uploads a video, it goes to S3, and after that, we update the state in the database. Let's say the status is updated to `uploaded`.
+
+From S3, it goes to the processing state, and a worker processes it. The database then updates the status to `processing`, and once it is processed, the database status gets updated to `success`.
+
+But what happens if the video processing is successful but the database status doesn't get updated?
+
+Or what if the video is uploaded successfully but the database doesn't update the status?
+
+The system can go out of sync because we are only storing the current state in the database. We don't have the complete history of what happened before, so it becomes difficult to understand where things went wrong.
+
+To solve this kind of problem, we can use event sourcing.
+
+In event sourcing architecture, instead of only storing the current state, we store a log of every important event that happens.
+
+When a video is uploaded to S3, we store an event for it. Let's say the event is `video_uploaded`, and the data contains the video path and timestamp.
+
+When the video starts processing, we emit another event, like `video_processing_started`. The data can contain the video URL and timestamp, which tells us when the video moved to the processing state.
+
+This event is appended after the upload event. We don't overwrite the previous event. All events are appended like this.
+
+If the video processing is successful, we emit another event like `video_processing_success`.
+
+So now we have a complete history of everything that happened with the video.
+
+```text
+video_uploaded
+       ↓
+video_processing_started
+       ↓
+video_processing_success
+```
+
+The events become the source of truth, and the current state can be reconstructed from these events.
+
+If something goes wrong, we can replay the events and see what happened during the whole video processing pipeline. We can go through the events one by one and find out exactly where something went wrong.
+
+That's why event sourcing is super useful.
+
+## A few terms we need to keep in mind
+
+### 1. Hydration
+
+Hydration means reconstructing the current state from the stored events.
+
+For example, we have these events:
+
+```text
+video_uploaded
+       ↓
+video_processing_started
+       ↓
+video_processing_success
+```
+
+If we replay these events in order, we can reconstruct the current state of the video.
+
+So the final state would be `success`.
+
+Instead of storing only:
+
+```text
+status = success
+```
+
+we have the complete history of how the video reached that state.
+
+### 2. Replay
+
+Replay means taking the stored events and processing them again in order to reconstruct the state or rebuild something from the event history.
+
+Let's say a user says:
+
+> "My video has been processed, but it's still showing as uploaded."
+
+We can replay all the events related to that video and see what actually happened.
+
+Maybe the video was uploaded successfully, then processing started, but the `video_processing_success` event was never emitted.
+
+Or maybe the success event was emitted, but the read model or another part of the system wasn't updated correctly.
+
+Because we have the complete history of events, we can go back and understand what actually happened instead of only looking at the current state.
+
+And that's the main idea behind event sourcing.
+
+Instead of only storing **what the current state is**, we store **everything that happened to reach that state**.
+
+## That's what makes event sourcing so powerful.
