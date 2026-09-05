@@ -597,6 +597,77 @@ It makes you better at everything.
 
 ---
 
+### All About Rust
+
+URL: https://www.gauravnardia.com/writing/rust-notes
+Published: 05.SEP.2026
+Description: Rust Notes
+
+## Why Rust? Isn't Node.js enough?
+
+Rust and Node.js can both be used to build fast and scalable backend applications, but they solve different problems.
+
+### 1. Performance
+
+Rust is a compiled language that runs directly on the machine. It gives developers low-level control over memory and system resources while still providing strong safety guarantees.
+
+Node.js runs JavaScript using the V8 JavaScript engine. It is very fast for many web applications, but Rust can provide better performance and more predictable resource usage for CPU-intensive and performance-critical workloads.
+
+### 2. Concurrency
+
+Rust has strong support for concurrent programming.
+
+Multiple threads can execute tasks concurrently, while Rust's type system helps prevent common problems such as data races at compile time.
+
+Node.js uses a single JavaScript thread for executing JavaScript code. It handles concurrency primarily through its event loop and asynchronous I/O.
+
+Node.js can use worker threads and multiple processes when needed, but Rust provides concurrency as a fundamental part of the language.
+
+### 3. Memory Safety
+
+One of Rust's biggest advantages is memory safety.
+
+Rust uses three important concepts:
+
+- Ownership
+- Borrowing
+- Lifetimes
+
+These allow Rust to manage memory without requiring a garbage collector.
+
+Rust catches many memory-related problems at compile time, before the program runs.
+
+### 4. No Garbage Collector
+
+Languages such as JavaScript, Java, and Go use garbage collection to automatically manage memory.
+
+Rust does not use a garbage collector.
+
+Instead, Rust knows when memory should be released through its ownership system.
+
+This gives Rust:
+
+- Predictable memory usage
+- No garbage collection pauses
+- Fine-grained control over resources
+- High performance
+
+### 5. Compile-Time Safety
+
+Rust moves many errors from runtime to compile time.
+
+For example:
+
+```rust
+let name = String::from("Gaurav");
+
+let other = name;
+
+println!("{}", name); // ❌ Error
+```
+
+---
+
 ### System Design For Beginners
 
 URL: https://www.gauravnardia.com/writing/system-design-for-beginners

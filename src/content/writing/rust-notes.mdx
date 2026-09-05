@@ -1,0 +1,610 @@
+---
+title: All About Rust
+description: Rust Notes
+publishDate: 05.SEP.2026
+modifiedDate: 05.SEP.2026
+author: Gaurav Nardia
+ogImage: https://gauravnardia.com/media/og-images/your-article-slug.jpg
+keywords: Rust
+---
+
+## Why Rust? Isn't Node.js enough?
+
+Rust and Node.js can both be used to build fast and scalable backend applications, but they solve different problems.
+
+### 1. Performance
+
+Rust is a compiled language that runs directly on the machine. It gives developers low-level control over memory and system resources while still providing strong safety guarantees.
+
+Node.js runs JavaScript using the V8 JavaScript engine. It is very fast for many web applications, but Rust can provide better performance and more predictable resource usage for CPU-intensive and performance-critical workloads.
+
+### 2. Concurrency
+
+Rust has strong support for concurrent programming.
+
+Multiple threads can execute tasks concurrently, while Rust's type system helps prevent common problems such as data races at compile time.
+
+Node.js uses a single JavaScript thread for executing JavaScript code. It handles concurrency primarily through its event loop and asynchronous I/O.
+
+Node.js can use worker threads and multiple processes when needed, but Rust provides concurrency as a fundamental part of the language.
+
+### 3. Memory Safety
+
+One of Rust's biggest advantages is memory safety.
+
+Rust uses three important concepts:
+
+- Ownership
+- Borrowing
+- Lifetimes
+
+These allow Rust to manage memory without requiring a garbage collector.
+
+Rust catches many memory-related problems at compile time, before the program runs.
+
+### 4. No Garbage Collector
+
+Languages such as JavaScript, Java, and Go use garbage collection to automatically manage memory.
+
+Rust does not use a garbage collector.
+
+Instead, Rust knows when memory should be released through its ownership system.
+
+This gives Rust:
+
+- Predictable memory usage
+- No garbage collection pauses
+- Fine-grained control over resources
+- High performance
+
+### 5. Compile-Time Safety
+
+Rust moves many errors from runtime to compile time.
+
+For example:
+
+```rust
+let name = String::from("Gaurav");
+
+let other = name;
+
+println!("{}", name); // ❌ Error
+```
+
+## Memory Management in Rust
+
+Memory management is the process of allocating, using, and releasing memory while a program is running.
+
+Different programming languages use different approaches to manage memory.
+
+There are three common approaches:
+
+1. Garbage Collection
+2. Manual Memory Management
+3. Rust's Ownership System
+
+---
+
+### 1. Garbage Collection
+
+Languages such as Java, JavaScript, and Go use a **garbage collector (GC)**.
+
+The garbage collector automatically finds memory that is no longer being used and releases it.
+
+The general process looks like this:
+
+```text
+Program creates data
+        ↓
+Data is stored in memory
+        ↓
+Program stops using the data
+        ↓
+Garbage Collector detects unused data
+        ↓
+Memory is released
+```
+
+# Advantages
+
+- Developers don't have to manually free memory.
+- Reduces the risk of some memory-management bugs.
+- Easier to work with because memory cleanup is handled automatically.
+
+# Disadvantages
+
+- Garbage collection requires runtime work.
+- Garbage collection can introduce pauses.
+- Developers have less direct control over when memory is released.
+
+### 2. Manual Memory Management
+
+Languages such as C and C++ allow developers to manually allocate and deallocate memory.
+
+The developer is responsible for deciding when memory should be allocated and when it should be released.
+
+### 2. Rust Way
+
+Rust takes a different approach.
+
+Rust does not use a garbage collector, and developers normally don't manually free memory.
+
+Instead, Rust uses an ownership system to manage memory safely.
+
+# **The main concepts are:**
+
+- Ownership
+- Borrowing
+- References
+- Lifetimes
+
+These rules are checked by the Rust compiler at compile time.
+
+## Ownership
+
+Rust uses ownership to manage memory safely without needing a garbage collector.
+
+### The Three Ownership Rules
+
+Rust's ownership system follows three main rules:
+
+1. Every value in Rust has an owner.
+2. A value can have only one owner at a time.
+3. When the owner goes out of scope, the value is dropped and its memory is automatically released.
+
+## Borrowing and References
+
+In Rust, sometimes we want to use a value without taking ownership of it.
+
+This is where **borrowing** and **references** come in.
+
+Borrowing allows us to temporarily use a value while the original owner keeps ownership.
+
+> Borrowing means using a value without taking ownership of it.
+
+---
+
+## References
+
+A reference is a way to access a value without owning it.
+
+We create a reference using `&`.
+
+```rust
+let name = String::from("Gaurav");
+
+let reference = &name;
+
+println!("{}", reference);
+```
+
+## Structs
+
+Structs in Rust allow us to group related data together and create our own custom data types.
+
+They are somewhat similar to **objects in JavaScript**, but Rust structs are strongly typed.
+
+For example, instead of keeping user information in separate variables:
+
+```rust
+let active = true;
+let username = String::from("Gaurav");
+let email = String::from("gaurav@example.com");
+let sign_in_count = 1;
+```
+
+We can group everything into a User struct.
+
+```rust
+struct User {
+    active: bool,
+    username: String,
+    email: String,
+    sign_in_count: u64,
+}
+```
+
+## Enums
+
+Enums, short for **enumerations**, allow us to define a type that can have one of several possible values.
+
+They are useful when a value can only be one of a specific set of options.
+
+For example, a user account might have different states:
+
+```rust
+enum Status {
+    Active,
+    Inactive,
+    Suspended,
+}
+
+fn main() {
+let status = Status::Active;
+
+    match status {
+        Status::Active => println!("User is active"),
+        Status::Inactive => println!("User is inactive"),
+        Status::Suspended => println!("User is suspended"),
+    }
+
+}
+```
+
+## Pattern Matching
+
+Pattern matching is a way to check a value against different patterns and execute code based on which pattern matches.
+
+Rust provides a powerful `match` expression for pattern matching.
+
+Pattern matching is commonly used with:
+
+- Enums
+- `Option<T>`
+- `Result<T, E>`
+- Numbers
+- Characters
+- Tuples
+- Structs
+
+---
+
+## Basic `match`
+
+For example:
+
+```rust
+let number = 2;
+
+match number {
+    1 => println!("One"),
+    2 => println!("Two"),
+    3 => println!("Three"),
+    _ => println!("Something else"),
+}
+```
+
+## Error Handling
+
+Error handling is the process of dealing with situations where something goes wrong while a program is running.
+
+For example:
+
+- A file doesn't exist.
+- A database connection fails.
+- A user provides invalid input.
+- A network request fails.
+- A value cannot be parsed.
+- An operation returns an unexpected result.
+
+Rust takes error handling seriously and provides a type-safe way to handle errors.
+
+The two main types used for error handling are:
+
+- `Option<T>`
+- `Result<T, E>`
+
+---
+
+## `panic!`
+
+Rust has two general categories of errors:
+
+1. Recoverable errors
+2. Unrecoverable errors
+
+For **unrecoverable errors**, Rust provides the `panic!` macro.
+
+```rust
+fn main() {
+    panic!("Something went wrong!");
+}
+```
+
+When panic! is called, the program stops running.
+
+It is useful when the program reaches a state where continuing execution does not make sense.
+
+**Recoverable Errors**
+
+Many errors are expected to happen and can be handled gracefully.
+
+For example, a file might not exist.
+
+We don't want the entire application to crash just because a file is missing.
+
+Rust uses Result<T, E> for these situations.
+
+```rust
+enum Result<T, E> {
+    Ok(T),
+    Err(E),
+}
+```
+
+## Collections
+
+Collections are data structures used to store multiple values together.
+
+Rust provides several useful collection types in its standard library.
+
+The most commonly used collections are:
+
+- `Vec<T>` → Growable list of values
+- `String` → Growable collection of UTF-8 text
+- `HashMap<K, V>` → Stores key-value pairs
+
+Unlike arrays and tuples, collections are usually stored on the **heap** and can grow or shrink at runtime.
+
+---
+
+## 1. Vectors
+
+A `Vec<T>` is a growable list that stores values of the same type.
+
+For example:
+
+```rust
+let numbers = vec![10, 20, 30, 40];
+```
+
+Here, numbers contains four integers.
+
+We can access elements using their index:
+
+```rust
+println!("{}", numbers[0]);
+println!("{}", numbers[2]);
+```
+
+## Traits
+
+A trait defines a set of behaviors that a type can implement.
+
+You can think of a trait as a **contract**.
+
+The trait says:
+
+> "Any type that implements me must provide these behaviors."
+
+Traits are similar to **interfaces** in languages such as Java, TypeScript, or Go.
+
+---
+
+## Defining a Trait
+
+We define a trait using the `trait` keyword.
+
+```rust
+trait Greet {
+    fn greet(&self);
+}
+```
+
+It requires any type that implements it to provide a greet() method.
+
+We use impl to implement a trait for a type.
+
+```rust
+struct User {
+    name: String,
+}
+
+impl Greet for User {
+    fn greet(&self) {
+        println!("Hello, {}", self.name);
+    }
+}
+```
+
+# Lifetimes in Rust
+
+A **lifetime** tells Rust how long a reference is valid.
+
+Lifetimes are mainly used to ensure that **references never outlive the data they point to**.
+
+Rust does not allow a reference to become invalid or point to data that has already been dropped.
+
+---
+
+## Why Do We Need Lifetimes?
+
+Consider this:
+
+```rust
+fn main() {
+    let r;
+
+    {
+        let x = 10;
+        r = &x;
+    }
+
+    println!("{}", r);
+}
+```
+
+This is not allowed because x is dropped when the inner scope ends, but r tries to use a reference to x afterward.
+
+```
+x exists
+│
+├── r points to x
+│
+└── x is dropped ❌
+     r would now be dangling
+```
+
+Rust prevents this at compile time.
+
+### What Is a Lifetime?
+
+A lifetime represents the scope during which a reference is valid.
+
+```
+let x = 10;
+let r = &x;
+
+println!("{}", r);
+```
+
+Here, the lifetime of r cannot be longer than the lifetime of x.
+
+Rust usually determines lifetimes automatically.
+
+### Lifetime Annotation
+
+Sometimes Rust needs help understanding the relationship between multiple references.
+
+We can use a lifetime annotation:
+
+```
+'a
+```
+
+example
+
+```
+fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
+    if x.len() > y.len() {
+        x
+    } else {
+        y
+    }
+}
+
+```
+
+Here, 'a is a lifetime parameter.
+
+It means The returned reference will be valid for at least as long as the lifetime 'a.
+
+# Multi-Threading in Rust
+
+**Multi-threading** allows a program to execute multiple tasks concurrently using multiple threads.
+
+Rust provides powerful tools for multi-threading while maintaining **memory safety** without requiring a garbage collector.
+
+---
+
+## What Is a Thread?
+
+A **thread** is an independent path of execution inside a program.
+
+A program can have:
+
+```text
+Process
+│
+├── Main Thread
+├── Worker Thread 1
+├── Worker Thread 2
+└── Worker Thread 3
+```
+
+Instead of doing everything sequentially:
+
+```
+Task A → Task B → Task C → Task D
+```
+
+multiple threads can work at the same time:
+
+```
+Thread 1 → Task A ──────────
+Thread 2 → Task B ─────
+Thread 3 → Task C ───────────
+Thread 4 → Task D ────
+```
+
+### Creating a Thread
+
+Rust provides std::thread::spawn() to create a new thread.
+
+```
+use std::thread;
+
+fn main() {
+    thread::spawn(|| {
+        println!("Hello from another thread!");
+    });
+
+    println!("Hello from the main thread!");
+}
+
+```
+
+# Message Passing in Rust
+
+**Message passing** is a concurrency pattern where threads communicate with each other by **sending messages instead of directly sharing memory**.
+
+The basic idea is:
+
+> **"Don't communicate by sharing memory; communicate by sending messages."**
+
+Instead of multiple threads directly modifying the same data, one thread sends data to another through a **channel**.
+
+---
+
+## Why Message Passing?
+
+Suppose multiple threads need to communicate.
+
+With shared state:
+
+```text
+Thread 1 ──┐
+Thread 2 ──┼──→ Shared Memory
+Thread 3 ──┘
+```
+
+Multiple threads access the same memory, so we need synchronization such as:
+
+```
+Arc<Mutex<T>>
+```
+
+With message passing:
+
+```
+Thread 1 ──┐
+Thread 2 ──┼──→ Channel ──→ Receiver
+Thread 3 ──┘
+```
+
+Threads communicate by sending messages.
+
+This can make concurrent programs easier to reason about.
+
+```
+use std::sync::mpsc;
+use std::thread;
+
+fn main() {
+    let (tx, rx) = mpsc::channel();
+
+    thread::spawn(move || {
+        tx.send(String::from("Hello from thread!")).unwrap();
+    });
+
+    let message = rx.recv().unwrap();
+
+    println!("Received: {}", message);
+}
+```
+
+# Macros in Rust
+
+A **macro** in Rust is a way to write code that **generates other Rust code**.
+
+Instead of writing the same code repeatedly, macros allow you to define a pattern once and generate the required code automatically.
+
+A simple example is:
+
+```rust
+println!("Hello, Rust!");
+
+println! is a macro.
+
+The ! tells us that println is a macro, not a normal function.
+```
