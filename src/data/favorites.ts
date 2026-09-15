@@ -3,11 +3,18 @@ export interface Favorite {
 	name: string;
 	description: string;
 	url: string;
-	category: "Product" | "People" | "Site" | "Font" | "Movie";
+	category: "Product" | "People" | "Site" | "Font" | "Podcasts";
 	nofollow?: boolean; // Optional: if false, nofollow won't be added
 }
 
 export const favorites: Favorite[] = [
+	{
+		id: "raj",
+		name: "Raj Shamani",
+		description: "Who have been inspiring me since the beginning.",
+		url: "https://www.youtube.com/@rajshamani",
+		category: "People",
+	},
 	{
 		id: "peerlist",
 		name: "Peerlist",
@@ -55,7 +62,7 @@ export const favorites: Favorite[] = [
 		name: "Alex Hormozi & Chrish",
 		description: "Go to video when I feel down",
 		url: "https://www.youtube.com/watch?v=Wy7CTJcfiM4",
-		category: "Site",
+		category: "Podcasts",
 	},
 	{
 		id: "elonmusk",
