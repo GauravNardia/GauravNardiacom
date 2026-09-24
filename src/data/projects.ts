@@ -42,7 +42,7 @@ export const experience: Project[] = [
 	{
 		id: "peerlist",
 		name: "Peerlist",
-		description: "Software Engineer - AUG.2025 - JAN.2026",
+		description: "Social Media Marketing Consultant - AUG.2025 - JAN.2026",
 		url: "https://peerlist.io",
 	},
 	{
