@@ -6,6 +6,12 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+		{
+		id: "jobrail",
+		name: "Jobrail",
+		description: "Open source Redis backed job queue (Rust)",
+		url: "https://github.com/GauravNardia/jobrail",
+	},
 	{
 		id: "bettervercel",
 		name: "Better Vercel",
@@ -24,18 +30,18 @@ export const projects: Project[] = [
 		description: "Realtime developer betting app (made me $400 in 2 months)",
 		url: "https://trybit.gauravnardia.com",
 	},
-	{
-		id: "httpprotocol",
-		name: "HTTP Protocol",
-		description: "Http protocol",
-		url: "https://github.com/GauravNardia/tcp-protocol",
-	},
-	{
-		id: "chess",
-		name: "Chess",
-		description: "Realtime multiplayer chess game",
-		url: "https://github.com/GauravNardia/chess",
-	},
+	// {
+	// 	id: "httpprotocol",
+	// 	name: "HTTP Protocol",
+	// 	description: "Http protocol",
+	// 	url: "https://github.com/GauravNardia/tcp-protocol",
+	// },
+	// {
+	// 	id: "chess",
+	// 	name: "Chess",
+	// 	description: "Realtime multiplayer chess game",
+	// 	url: "https://github.com/GauravNardia/chess",
+	// },
 ];
 
 export const experience: Project[] = [
