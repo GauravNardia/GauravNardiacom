@@ -1,0 +1,74 @@
+---
+title: Why I Used Redis Lua Scripts for Atomic Job Claiming While Building Queue
+description: job queue in rust
+publishDate: 23.OCT.2026
+modifiedDate: 23.OCT.2026
+author: Gaurav Nardia
+ogImage: https://gauravnardia.com/media/og-images/your-article-slug.jpg
+keywords: job, queue, bullmq, rust
+---
+
+One of the first things I had to think carefully about in JobRail was what happens when multiple workers want the same job.
+
+Imagine that a job is waiting in Redis and two workers are ready to process it.
+
+Both workers need to obtain the job and establish that they own the right to process it. If those operations aren't coordinated correctly, they can race with each other.
+
+This is where atomic operations become important.
+
+## The problem with separate commands
+
+Suppose a worker performs these operations:
+
+- Read a job from the waiting queue.
+- Mark it as active.
+- Record that the worker has claimed it.
+- Start processing it.
+
+What happens if the worker crashes between steps two and three?
+
+Or if another worker changes the job's state while the first worker is still working through those steps?
+
+The problem isn't necessarily any individual Redis command. It's the gap between commands.
+
+When several operations must succeed together, splitting them across separate requests creates opportunities for inconsistent state.
+
+## My approach: Redis Lua scripts
+
+I used Redis Lua scripts for queue operations that need to happen atomically.
+
+A Lua script executes on the Redis server as one atomic operation relative to other Redis commands. Other clients don't interleave their commands in the middle of that script.
+
+This allows related state changes to be coordinated in a single operation rather than relying on a series of independent requests.
+
+For JobRail, the idea is to coordinate the relevant queue transitions and ownership information so workers don't independently perform conflicting versions of the same claim operation.
+
+The exact operations and keys need to stay consistent with the queue's state model.
+
+## What atomicity does — and doesn't — guarantee
+
+This distinction matters.
+
+Atomicity means another Redis command won't interrupt the script halfway through its execution. It does not mean the entire job handler runs atomically.
+
+A worker might claim a job successfully, call an external API, and then crash before recording the result.
+
+Redis cannot roll back that external API call.
+
+That's why atomic claiming alone isn't enough. JobRail also needs a strategy for handling abandoned work, tracking ownership, and deciding when a job can be retried.
+
+Leases and recovery help address that separate problem.
+
+There is also an operational trade-off: Lua scripts must be designed carefully because long-running scripts can block other Redis activity. Scripts should do bounded, predictable work.
+
+## Why this was worth implementing
+
+I could have started with separate Redis commands because they're easier to understand.
+
+But that would leave the coordination problem unresolved.
+
+Using Lua made me think about state transitions as a single operation and forced me to be more explicit about which changes must happen together.
+
+It also made me consider the failure cases instead of assuming every worker completes every step.
+
+The main takeaway for me: when several workers share state, correctness depends not just on the commands you use, but on how those commands are coordinated.
