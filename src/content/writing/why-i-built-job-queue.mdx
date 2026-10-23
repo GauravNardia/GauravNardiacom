@@ -1,0 +1,72 @@
+---
+title: Why I Built a Background Job Queue in Rust
+description: job queue in rust
+publishDate: 23.OCT.2026
+modifiedDate: 23.OCT.2026
+author: Gaurav Nardia
+ogImage: https://gauravnardia.com/media/og-images/your-article-slug.jpg
+keywords: job, queue, bullmq, rust
+---
+
+Ive been always a curious person. Everything related to tech and science really excites me. I built job queue because I wanted to understand how background job systems actually work. I wanted to work on something where correctness matters even when things go wrong.
+
+Think about sending emails, processing payments, generating reports, or running scheduled tasks. You don't want a user's request to wait for all of that work to finish. You want to accept the request, put the work in a queue, and let a worker process it in the background.
+
+That sounds simple until you start thinking about failures.
+
+What happens if a worker crashes halfway through a job? What if two workers try to process the same job? What if a job fails five times? What if a scheduled job becomes eligible while the system is under load?
+
+Those questions became the interesting part of JobRail.
+
+## Why I chose Rust?
+
+I chose Rust because I wanted to learn systems programming by building something that has real concurrency and failure-handling problems.
+
+Rust makes ownership explicit and provides strong compile-time guarantees around many classes of memory-safety errors. That doesn't automatically make a distributed system reliable, but it gives me a solid foundation to reason about the code.
+
+I also wanted to understand asynchronous execution with Tokio rather than hide all the complexity behind a framework.
+
+## Why Redis?
+
+Redis gave me the primitives I needed to start building the queue.
+
+I used Redis to store job data and maintain queue-related state. From there, the project grew to include waiting, active, delayed, and scheduled jobs, along with worker processing and recovery.
+
+Redis is fast, but speed wasn't the only consideration. I needed to understand how multiple operations interact when several workers are running concurrently.
+
+A sequence of individually valid Redis commands isn't necessarily safe as a group. Another worker can execute commands between them.
+
+That became one of the most important design problems in JobRail.
+
+## What I built
+
+JobRail evolved beyond simply pushing and popping job IDs.
+
+Some of the functionality I worked on includes:
+
+- Job creation and state transitions
+- Concurrent workers
+- Atomic queue operations using Redis Lua scripts
+- Delayed jobs and retry scheduling
+- Exponential backoff and maximum attempts
+- Lease ownership and recovery
+- Idempotency and attempt history
+- Priorities and repeatable jobs
+
+Each feature introduced new questions about state, failure, and coordination.
+
+For example, adding retries wasn't just about running a job again. I also needed to think about when it becomes eligible, how its attempts are tracked, and what happens if the worker disappears during processing.
+
+## What I learned
+
+The biggest lesson so far is that implementing the happy path is the easy part.
+
+A queue can appear to work perfectly when there is one worker, every job succeeds, and Redis is always available. The interesting engineering starts when those assumptions stop being true.
+
+I'm building JobRail to understand those problems firsthand, not just to reproduce the API of an existing queue library.
+
+Proof and implementation
+
+- Repository: https://github.com/GauravNardia/jobrail
+
+I'm still learning, and that's part of the point. I want to understand why these systems work, where they fail, and what it takes to make them dependable.

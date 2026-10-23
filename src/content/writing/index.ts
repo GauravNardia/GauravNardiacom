@@ -4,6 +4,7 @@
 
 // Sorted article list (newest first) - extracted from MDX frontmatter
 export const articleList: { id: string; title: string; date: string }[] = [
+  { id: 'why-i-built-job-queue', title: 'Why I Built a Background Job Queue in Rust', date: '23.OCT.2026' },
   { id: 'rust-notes', title: 'All About Rust', date: '05.SEP.2026' },
   { id: 'event-sourcing', title: 'Event Sourcing Architecture', date: '07.MAY.2026' },
   { id: 'docker-for-developers', title: 'Docker for developers', date: '13.Apr.2026' },
