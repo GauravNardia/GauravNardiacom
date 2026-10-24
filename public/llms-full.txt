@@ -1413,6 +1413,112 @@ I'm still learning system design, and this blog is just my way of documenting wh
 
 ---
 
+### Engineering Trade-offs I Made While Building Queue System
+
+URL: https://www.gauravnardia.com/writing/trade-off-in-queue
+Published: 24.OCT.2026
+Description: job queue in rust
+
+When I started JobRail, I wanted to build a queue that could process background jobs.
+
+As I added features, I realized that every reliability improvement also introduced new complexity.
+
+Atomic operations, leases, retries, scheduling, idempotency, and concurrent workers all solve different problems. They also interact with one another.
+
+This article is about some of the trade-offs I encountered while building the system.
+
+## 1. Redis Lua scripts versus separate commands
+
+Separate Redis commands are straightforward to read and debug.
+
+The problem is that several commands executed independently don't necessarily form one atomic state transition.
+
+Lua scripts allow related changes to execute atomically on the Redis server, which helps with operations such as coordinating queue state and ownership.
+
+The trade-off is that Lua scripts add another layer of complexity. They need clear inputs, predictable execution, careful key management, and tests for failure cases.
+
+I chose atomic scripts where coordination matters instead of assuming that a sequence of commands would always be safe.
+
+## 2. Leases versus permanent ownership
+
+Keeping a job active until the original worker reports completion is simple, but it can leave jobs stuck after crashes.
+
+Leases make recovery possible by allowing ownership to expire. Heartbeats can renew that ownership while a worker is still making progress.
+
+The trade-off is that lease expiration introduces timing and ownership races. A slow worker might still be executing when the queue considers its lease expired.
+
+That means lease handling must be paired with ownership validation and sensible recovery logic. It also means external side effects need their own protections against duplicate execution.
+
+## 3. Retries versus immediate failure
+
+Failing a job permanently after its first error is simple and predictable, but temporary failures can make the system unnecessarily brittle.
+
+Retries and exponential backoff make transient failures easier to handle.
+
+However, retries consume resources, delay final failure, and can repeat side effects. A maximum-attempt policy helps bound the work, but it doesn't guarantee that retrying is safe.
+
+I learned that a retry policy needs to be designed around the kind of work being executed, not treated as a universal solution.
+
+## 4. Concurrency versus coordination
+
+More workers can increase throughput, but they also increase the number of operations happening at the same time.
+
+That makes race conditions and shared-state correctness more important.
+
+I needed to think about how concurrent workers claim jobs, update state, and recover abandoned work. I also needed tests that exercised those interactions instead of only testing a single worker in isolation.
+
+Concurrency isn't automatically a performance improvement if the coordination logic is incorrect.
+
+## 5. Features versus confidence
+
+JobRail grew to include scheduling, priorities, idempotency, attempt history, worker recovery, and other queue features.
+
+But having a feature is different from proving that it behaves correctly under failure.
+
+For example, a retry test that checks only whether a job runs again doesn't necessarily prove that two workers cannot claim it at the same time.
+
+I worked on tests for queue reliability and also encountered test-isolation issues when multiple tests interacted with shared Redis state.
+
+That reinforced an important point: tests themselves need to be designed carefully. If one test leaves keys behind, another test may fail for reasons unrelated to the code it's trying to validate.
+
+I used isolated cleanup and serialized execution where shared Redis state required it. The longer-term goal is to make tests as independent and repeatable as possible.
+
+## What I'd improve next
+
+There are still important questions to keep investigating before treating any queue as production-ready:
+
+How does the system behave during Redis outages and restarts?
+
+Are all state transitions safe under concurrent access?
+
+What happens when a worker loses its lease during a long-running operation?
+
+How are duplicate side effects handled by job handlers?
+
+Can the system expose enough metrics and logs to diagnose failures?
+
+Have recovery and retry behavior been tested under realistic failure conditions?
+
+These aren't claims that JobRail has solved every scenario. They're the questions I use to evaluate the design and identify what needs more work.
+
+## The biggest lesson
+
+Building JobRail has taught me that reliable systems aren't created by adding a long list of features.
+
+They come from understanding the guarantees each component provides, knowing where those guarantees stop, and designing the rest of the system around those boundaries.
+
+Redis atomicity helps coordinate state changes. Leases help recover abandoned work. Retries help with transient failures. Idempotency helps control the consequences of repeated execution.
+
+None of those mechanisms is a complete solution on its own.
+
+The interesting engineering work is making them work together.
+
+I'm building JobRail to get better at making these decisions, understanding their trade-offs, and being able to explain why I made them.
+
+That's the part of engineering I want to keep getting better at.
+
+---
+
 ### Why I Built a Background Job Queue in Rust
 
 URL: https://www.gauravnardia.com/writing/why-i-built-job-queue
