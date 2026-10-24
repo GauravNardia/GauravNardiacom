@@ -1,0 +1,89 @@
+---
+title: Retries and Delayed Jobs in Queue System
+description: job queue in rust
+publishDate: 24.OCT.2026
+modifiedDate: 24.OCT.2026
+author: Gaurav Nardia
+ogImage: https://gauravnardia.com/media/og-images/your-article-slug.jpg
+keywords: job, queue, bullmq, rust
+---
+
+A background job will fail eventually.
+
+An email provider might time out. An external API might return an error. A network connection might disappear at the wrong moment.
+
+Immediately treating every failure as permanent would make a queue unnecessarily fragile. But retrying everything immediately can be just as problematic.
+
+I wanted JobRail to distinguish a failed attempt from a job that has permanently failed.
+
+## Why retry immediately?
+
+Suppose an external service is temporarily unavailable and hundreds of jobs depend on it.
+
+If every job retries immediately, they all hit the same service again. If the service is still struggling, the retries add even more pressure.
+
+This can turn a temporary problem into a larger outage.
+
+I wanted a way to delay retries and spread them out over time.
+
+## Exponential backoff
+
+JobRail supports exponential backoff for retries.
+
+The basic idea is to increase the waiting period after each failed attempt.
+
+A simplified formula is:
+
+delay = min(max_delay, base_delay × 2^(attempt - 1))
+
+For example, with a base delay of one second and a maximum delay of thirty seconds, the delays would be approximately:
+
+- Attempt 1: 1 second
+- Attempt 2: 2 seconds
+- Attempt 3: 4 seconds
+- Attempt 4: 8 seconds
+- Attempt 5: 16 seconds
+
+Later attempts: capped at 30 seconds
+
+The values here are an illustrative example, not a claim about JobRail's configured production defaults.
+
+A maximum-attempt limit is also important. Without one, a permanently failing job could continue retrying indefinitely.
+
+## Separating delayed work from waiting work
+
+A job that is eligible to run now is different from a job that should run in the future.
+
+JobRail uses Redis-backed queue structures to distinguish waiting jobs from delayed or scheduled work.
+
+The scheduler can identify jobs whose delay has expired and make them eligible for processing.
+
+This separation means workers don't have to treat every future job as immediately executable.
+
+It also creates a new correctness requirement: promoting a delayed job must not accidentally make the same job eligible multiple times.
+
+That is why scheduling and state transitions need careful coordination.
+
+## The failure cases I had to consider
+
+A retry system raises more questions than it first appears to.
+
+- What if the worker crashes before scheduling the retry?
+- What if the scheduler processes the same due job more than once?
+- What if a retry becomes eligible while workers are busy?
+- What happens when the maximum number of attempts is reached?
+- How do we distinguish an individual failed attempt from the final job state?
+
+These questions affect the data model, scheduling logic, and recovery behavior.
+
+The system needs to maintain a coherent relationship between the job's current state, its attempt history, and its next eligible execution time.
+
+## What I learned
+
+Retries aren't just a loop around a function call. They're part of the queue's state machine.
+
+A good retry design needs to consider timing, failure limits, duplicate execution, and recovery.
+
+Exponential backoff helps reduce repeated pressure on a struggling dependency, but it doesn't solve every reliability problem. Some workloads may also benefit from jitter, which randomizes retry delays to avoid many jobs retrying at exactly the same time.
+
+Building this feature made me think about retries as a system-level behavior rather than a small implementation detail.
