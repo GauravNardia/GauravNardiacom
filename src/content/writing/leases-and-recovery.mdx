@@ -1,0 +1,75 @@
+---
+title: What are the Leases and Recovery in Job Queue?
+description: job queue in rust
+publishDate: 24.OCT.2026
+modifiedDate: 24.OCT.2026
+author: Gaurav Nardia
+ogImage: https://gauravnardia.com/media/og-images/your-article-slug.jpg
+keywords: job, queue, bullmq, rust
+---
+
+A job queue can work perfectly while every worker is healthy.
+
+But workers crash. Processes restart. Machines lose connectivity. A handler can take longer than expected or get stuck.
+
+If a worker claims a job and disappears, the queue needs a way to recover the work without leaving it active forever.
+
+That problem led me to implement lease-based ownership and recovery in JobRail.
+
+## Why marking a job active isn't enough
+
+Suppose a worker claims a job and the queue marks it as active.
+
+The worker then crashes before completing the job.
+
+If the queue only knows that the job is active, it may have no reason to believe the worker has disappeared. The job can remain stuck in that state.
+
+Simply moving every active job back to the waiting queue is also dangerous. A worker might still be processing the job, even if it temporarily cannot communicate with Redis.
+
+The queue needs a better way to determine whether ownership is still valid.
+
+## The lease concept
+
+A lease represents temporary ownership of a job.
+
+Instead of treating a claim as permanent, the system records ownership that must remain valid over time.
+
+JobRail uses lease-related ownership and recovery mechanisms. Workers can renew their leases through heartbeats, and the system can recover jobs whose ownership has expired.
+
+Conceptually, the lifecycle looks like this:
+
+1. A worker claims a job.
+2. The queue records the worker's ownership.
+3. The worker processes the job and renews its lease as needed.
+4. If the worker completes successfully, the job transitions to completion.
+5. If the worker disappears and its lease expires, recovery can make the job eligible for processing again.
+
+This gives the queue a way to detect abandoned work without assuming every active job is still being processed.
+
+## Why ownership matters
+
+Expiration by itself doesn't solve every race condition.
+
+Imagine that worker A's lease expires, and the queue recovers the job. Worker B then claims it.
+
+What if worker A wakes up and tries to complete the old job?
+
+The system needs to validate that worker A still has the correct ownership before accepting the state transition.
+
+This is where ownership tokens and guarded state changes become important. A stale worker must not be allowed to overwrite the newer owner's state simply because it once held the job.
+
+Even then, leases don't magically prevent every duplicate side effect. If worker A already sent an email or charged an external payment before losing its lease, the queue cannot undo that action.
+
+For side-effecting operations, idempotency and appropriate external-system safeguards are still necessary.
+
+## What this taught me
+
+I initially thought of a worker as something that takes a job and executes it.
+
+Thinking about leases changed that model. A worker is participating in a temporary ownership protocol, and the system has to handle the possibility that ownership expires while the worker is still running.
+
+That makes recovery, heartbeats, ownership validation, and state transitions closely related concerns.
+
+It also highlights an important distributed-systems lesson: a timeout can indicate that something has gone wrong, but it doesn't always prove that the original process has stopped.
+
+This is one of the areas I want to keep improving because failure handling is what separates a queue that works in a demo from one that can be trusted with real workloads.
