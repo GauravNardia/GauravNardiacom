@@ -5,7 +5,7 @@
 // Sorted article list (newest first) - extracted from MDX frontmatter
 export const articleList: { id: string; title: string; date: string }[] = [
   { id: 'leases-and-recovery', title: 'What are the Leases and Recovery in Job Queue?', date: '24.OCT.2026' },
-  { id: 'retries-and-delayed-job', title: 'Retries and Delayed Jobs in Queue System', date: '24.OCT.2026' },
+  { id: 'retries-and-delayed-job', title: 'Retries and Delayed Jobs in Queue System', date: '23.OCT.2026' },
   { id: 'why-i-used-redis-lua-script', title: 'Why I Used Redis Lua Scripts for Atomic Job Claiming', date: '23.OCT.2026' },
   { id: 'why-i-built-job-queue', title: 'Why I Built a Background Job Queue in Rust', date: '22.OCT.2026' },
   { id: 'rust-notes', title: 'All About Rust', date: '05.SEP.2026' },

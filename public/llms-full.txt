@@ -636,7 +636,7 @@ It is a persistent two-way connection between client and server. It starts as an
 ### Retries and Delayed Jobs in Queue System
 
 URL: https://www.gauravnardia.com/writing/retries-and-delayed-job
-Published: 24.OCT.2026
+Published: 23.OCT.2026
 Description: job queue in rust
 
 A background job will fail eventually.
